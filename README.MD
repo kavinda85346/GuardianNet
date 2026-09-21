@@ -25,6 +25,44 @@ GuardianNet is a machine learning–based cybersecurity project focused on detec
 - Git
 - Windows, macOS, or Linux (commands below are shown for Windows `cmd`; macOS/Linux equivalents are noted where they differ)
 
+## Project Folder Structure
+
+```
+├── GuardianNet/
+│    ├── taks-1/
+│    |    ├── enron_spam_dataset/
+│    |    |    └── dataset_analysis.ipynb
+│    |    ├── spam_assassin_spam_dataset/
+│    |    |    └── dataset_analysis.ipynb
+│    |    ├── phishing_uci_dataset/
+│    |    |    └── dataset_analysis.ipynb
+│    ├── taks-2/
+│    |    ├── nsl-kdd-1/
+│    |    |    └── dataset_analysis.ipynb
+│    |    ├── cic-ids2017/
+│    |    |    ├── benign-monday-no-metadata-dataset_analysis.ipynb
+│    |    |    ├── botnet-friday-no-metadata-dataset_analysis.ipynb
+│    |    |    ├── bruteforce-tuesday-no-metadata-dataset_analysis.ipynb
+│    |    |    ├── ddos-friday-no-metadata-dataset_analysis.ipynb
+│    |    |    ├── dos-wednesday-no-metadata-dataset_analysis.ipynb
+│    |    |    ├── infiltration-thursday-no-metadata-dataset_analysis.ipynb
+│    |    |    ├── portscan-friday-no-metadata-dataset_analysis.ipynb
+│    |    |    └── webattacks-thursday-no-metadata-dataset_analysis.ipynb
+│    ├── taks-3/
+│    |    ├── unsw_nb15-mr_wells_david/
+│    |    |    └── dataset_analysis.ipynb
+│    |    ├── cic-ids2018/
+│    |    |    └── dataset_analysis.ipynb
+│    ├── taks-4/
+│    |    ├── windows_api_call_sequences/
+│    |    |    └── dataset_analysis.ipynb
+│    |    ├── cic-and-mal-2017/
+│    |    |    └── dataset_analysis.ipynb
+├── gitignore/
+├── requirements.txt/
+└── README.md
+```
+
 ## Getting Started
 
 Follow the steps below to set up the project environment and run GuardianNet locally.
@@ -82,18 +120,18 @@ cd GuardianNet
 ### 4. Create a Virtual Environment
 
 ```
-python -m venv .playenv
+python -m venv .guardiannetenv
 ```
 
 ### 5. Activate the Virtual Environment
 
 ```
-.playenv\Scripts\activate
+.guardiannetenv\Scripts\activate
 ```
 
-> On macOS/Linux, use `source .playenv/bin/activate` instead.
+> On macOS/Linux, use `source .guardiannetenv/bin/activate` instead.
 
-Once activated, you should see `(.playenv)` prefixed to your terminal prompt.
+Once activated, you should see `(.guardiannetenv)` prefixed to your terminal prompt.
 
 ### 6. Upgrade pip
 
@@ -101,12 +139,12 @@ Once activated, you should see `(.playenv)` prefixed to your terminal prompt.
 python -m pip install --upgrade pip
 ```
 
-### 7. Install Required Libraries
+### 7. Install Project Requirements
 
-Install the necessary libraries into the activated environment only.
+Install the necessary project requirements into the activated environment by executing the following command within environment.
 
 ```
-python -m pip install numpy pandas
+pip install -r requirements.txt
 ```
 
 ### 8. Verify Installed Packages
@@ -123,7 +161,13 @@ Once you're done working, deactivate the environment.
 deactivate
 ```
 
-> Reactivate the created enviornment, use `.playenv\Scripts\activate`.
+> Reactivate the created enviornment, use `.guardiannetenv\Scripts\activate`.
+
+If you add any libraries or packages, add them to the requirements file by executing the following command.
+
+```
+pip freeze > requirements.txt
+```
 
 ## Project Status
 
